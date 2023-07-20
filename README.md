@@ -20,7 +20,7 @@ into your code
 Example:
 
 ```jsx
-export default MyComponentWithModalWindow() {
+export default function MyComponentWithModalWindow() {
   const [isModalWindow, setIsModalWindow] = useState(false);
 
   return (
@@ -37,15 +37,16 @@ export default MyComponentWithModalWindow() {
 
 ### Props
 
-| Prop name               | Description                                                              | Is Required | Default value                 |
-|-------------------------|--------------------------------------------------------------------------|-------------|-------------------------------|
-| isActive                | Should modal window be shown                                             | true        |                               |
-| title                   | Modal window title. May be string or JSX                                 | true        |                               |
-| onClose                 | Function that executes when user wants to close modal window             | false       |                               |
-| animationDuration       | How many milliseconds is modal window revealing or hiding                | false       | `210`                         |
-| closeButtonContents     | JSX contents in close button. Recommended to be an svg element           | false       | `<inserted svg icon>`         |
-| containerClassName      | Classname for providing your styles to window container                  | false       |                               |
-| headerClassName         | Classname for providing your styles to window header                     | false       |                               |
-| headerTitleClassName    | Classname for providing your styles to window title                      | false       |                               |
-| closeButtonClassName    | Classname for providing your styles to close button                      | false       |                               |
-| contentsClassName       | Classname for providing your styles to window contents wrapper           | false       |                               |
+| Prop name            | Description                                                    | Is Required | Default value         |
+|----------------------|----------------------------------------------------------------|-------------|-----------------------|
+| isActive             | Should modal window be shown                                   | true        |                       |
+| title                | Modal window title. May be string or JSX                       | true        |                       |
+| onClose              | Function that executes when user wants to close modal window   | false       |                       |
+| animationDuration    | How many milliseconds is modal window revealing or hiding      | false       | `210`                 |
+| closeButtonContents  | JSX contents in close button. Recommended to be an svg element | false       | `<inserted svg icon>` |
+| containerClassName   | Classname for providing your styles to window container        | false       |                       |
+| backgroundClassName  | Window background className                                    | false       |                       |
+| headerClassName      | Classname for providing your styles to window header           | false       |                       |
+| headerTitleClassName | Classname for providing your styles to window title            | false       |                       |
+| closeButtonClassName | Classname for providing your styles to close button            | false       |                       |
+| contentsClassName    | Classname for providing your styles to window contents wrapper | false       |                       |

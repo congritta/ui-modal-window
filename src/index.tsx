@@ -1,6 +1,6 @@
-import React, {ReactNode, useEffect, useState} from 'react';
+import React, {ReactNode, useEffect, useState} from "react";
 
-import styles from './index.module.css';
+import styles from "./index.module.css";
 
 const defaultAnimationDuration = 210
 
@@ -14,7 +14,7 @@ function DefaultCloseIcon() {
 
 export default function ModalWindow(props: {
   isActive: boolean,
-  title: JSX.Element | string,
+  title: ReactNode,
 
   children?: ReactNode,
 
@@ -22,8 +22,9 @@ export default function ModalWindow(props: {
 
   animationDuration?: number,
 
-  closeButtonContents?: JSX.Element | string,
+  closeButtonContents?: ReactNode,
 
+  backgroundClassName?: string,
   containerClassName?: string,
   headerClassName?: string,
   headerTitleClassName?: string,
@@ -58,8 +59,9 @@ export default function ModalWindow(props: {
     <div
       className={[
         styles.ModalWindow,
-        ...(isScrollable ? ['_isScrollable'] : []),
-        ...(props.isActive ? ['_isShown'] : [])
+        ...(isScrollable ? ["_isScrollable"] : []),
+        ...(props.isActive ? ["_isShown"] : []),
+        props.backgroundClassName,
       ].join(' ')}
       style={{
         '--transition-duration': `${props.animationDuration ?? defaultAnimationDuration}ms`
